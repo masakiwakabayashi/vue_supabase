@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import { supabase } from './lib/supabaseClient';
+// import { supabase } from './lib/supabaseClient';
 
-console.log(supabase);
+// console.log(supabase);
 </script>
 
 <template>
@@ -12,6 +12,7 @@ console.log(supabase);
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/sample">Sample</RouterLink>
+        <RouterLink to="/login">Login</RouterLink>
       </nav>
     </div>
   </header>
