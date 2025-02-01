@@ -28,6 +28,16 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginView.vue'),
+    },
+    {
+      path: '/todo',
+      name: 'todoList',
+      component: () => import('../views/TodoListView.vue'),
+    },
+    {
+      path: '/todo/:id',
+      name: 'todo',
+      component: () => import('../views/TodoView.vue'),
     }
   ],
 });
