@@ -1,9 +1,14 @@
+
 <script setup lang="ts">
-// import TheWelcome from '../components/TheWelcome.vue'
+
 </script>
 
 <template>
   <div class="sample">
-    <h1>Top Page</h1>
+    <h1>This is an sample page</h1>
   </div>
 </template>
+
+<style>
+
+</style>
