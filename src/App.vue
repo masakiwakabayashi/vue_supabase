@@ -16,6 +16,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/todo">Todo List</RouterLink>
         <RouterLink :to="`/todo/1`">Todo</RouterLink>
         <RouterLink to="/todo/create">Create Todo</RouterLink>
+        <RouterLink :to="`/todo/edit/1`">Edit Todo</RouterLink>
       </nav>
     </div>
   </header>

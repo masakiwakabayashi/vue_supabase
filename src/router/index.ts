@@ -43,6 +43,11 @@ const router = createRouter({
       path: '/todo/create',
       name: 'todoCreate',
       component: () => import('../views/TodoCreateView.vue'),
+    },
+    {
+      path: '/todo/edit/:id',
+      name: 'todoEdit',
+      component: () => import('../views/TodoEditView.vue'),
     }
   ],
 });
