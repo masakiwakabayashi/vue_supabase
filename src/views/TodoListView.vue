@@ -1,12 +1,14 @@
 <script setup>
 import { supabase } from '@/lib/supabaseClient';
 import { onMounted, ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const todoLists = ref(null);
 
 const getTodoList = async () => {
   const { data } = await supabase
-    .from('todo').select('*');
+    .from('todo')
+    .select('*');
 
     todoLists.value = data;
 
@@ -23,7 +25,9 @@ onMounted(getTodoList);
     <div>
       <ul>
         <li v-for="(todo) in todoLists" :key="todo.id">
-          {{ todo.id }} : {{ todo.title }}
+          <RouterLink :to="`/todo/${todo.id}`">
+            {{ todo.id }} : {{ todo.title }}
+          </RouterLink>
         </li>
       </ul>
     </div>
