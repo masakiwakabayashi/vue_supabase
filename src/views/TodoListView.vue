@@ -15,6 +15,15 @@ const getTodoList = async () => {
   console.log(data);
 }
 
+const deleteTodo = async (id) => {
+  await supabase
+  .from('todo')
+  .delete()
+  .eq('id', id).then(()=>{
+    console.log('Todo削除');
+  });
+}
+
 onMounted(getTodoList);
 
 </script>
@@ -28,6 +37,9 @@ onMounted(getTodoList);
           <RouterLink :to="`/todo/${todo.id}`">
             {{ todo.id }} : {{ todo.title }}
           </RouterLink>
+          <button
+            v-on:click="deleteTodo(todo.id)"
+          >削除</button>
         </li>
       </ul>
     </div>

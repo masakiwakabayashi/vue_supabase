@@ -38,6 +38,11 @@ const router = createRouter({
       path: '/todo/:id',
       name: 'todo',
       component: () => import('../views/TodoView.vue'),
+    },
+    {
+      path: '/todo/create',
+      name: 'todoCreate',
+      component: () => import('../views/TodoCreateView.vue'),
     }
   ],
 });
