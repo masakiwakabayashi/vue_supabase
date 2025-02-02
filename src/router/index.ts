@@ -29,33 +29,33 @@ const router = createRouter({
       name: 'login',
       component: () => import('../views/LoginView.vue'),
     },
-    {
-      path: '/todo',
-      name: 'todoList',
-      component: () => import('../views/TodoListView.vue'),
-    },
-    {
-      path: '/todo/:id',
-      name: 'todo',
-      component: () => import('../views/TodoView.vue'),
-    }
+    // {
+    //   path: '/todo',
+    //   name: 'todoList',
+    //   component: () => import('../views/TodoListView.vue'),
+    // },
+    // {
+    //   path: '/todo/:id',
+    //   name: 'todo',
+    //   component: () => import('../views/TodoView.vue'),
+    // }
   ],
 });
 
-// ログイン判定
-router.beforeEach(async (to, from, next) => {
-  const { data: { session } } = await supabase.auth.getSession();
-  // 認証が必要なページへのアクセス時にログインしていない場合、ログインページにリダイレクト
-  if (to.meta.requiresAuth && !session) {
-    next('/login');
-  }
-  // ログインページにアクセスする際、すでにログインしている場合はダッシュボードへリダイレクト
-  else if (to.path === '/' && session) {
-    next('/');
-  }
-  else {
-    next();
-  }
-});
+// // ログイン判定
+// router.beforeEach(async (to, from, next) => {
+//   const { data: { session } } = await supabase.auth.getSession();
+//   // 認証が必要なページへのアクセス時にログインしていない場合、ログインページにリダイレクト
+//   if (to.meta.requiresAuth && !session) {
+//     next('/login');
+//   }
+//   // ログインページにアクセスする際、すでにログインしている場合はダッシュボードへリダイレクト
+//   else if (to.path === '/' && session) {
+//     next('/');
+//   }
+//   else {
+//     next();
+//   }
+// });
 
 export default router

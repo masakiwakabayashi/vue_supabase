@@ -1,9 +1,25 @@
-<script setup lang="ts">
-// import TheWelcome from '../components/TheWelcome.vue'
+<script setup>
+import { supabase } from '@/lib/supabaseClient';
+import { onMounted, ref } from 'vue';
+
+const user = ref(null);
+
+const getCurrentUser = async () => {
+  const { data, error } = await supabase.auth.getUser();
+  if (error) {
+    console.error('ユーザー情報取得エラー:', error.message);
+  }
+  console.log(data.user);
+  user.value = data.user;
+}
+
+onMounted(getCurrentUser);
+
 </script>
 
 <template>
-  <div class="sample">
+  <div>
     <h1>Top Page</h1>
+    <p>{{ user?.email }}</p>
   </div>
 </template>
