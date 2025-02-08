@@ -4,8 +4,8 @@ import { mount, shallowMount } from '@vue/test-utils'
 import TodoView from '@/views/TodoView.vue';
 
 
-describe('Todoのデータが表示されること', () => {
-  it('renders properly', () => {
+describe('Todoページのテスト', () => {
+  it('Todoのデータが表示されること', () => {
     const wrapper = shallowMount(TodoView,{
       global: {
         plugins: []
