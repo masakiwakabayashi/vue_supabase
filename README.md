@@ -8,7 +8,7 @@ npm install
 npm run dev
 ```
 
-### Test
+## Test
 
 ```sh
 npm run test:unit
