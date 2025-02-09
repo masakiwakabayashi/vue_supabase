@@ -19,3 +19,8 @@ npm run test:unit
 ```sh
 npx supabase start
 ```
+## Create Migration
+
+```sh
+npx supabase db diff --use-migra -f {migration_name}
+```
