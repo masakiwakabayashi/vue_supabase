@@ -19,7 +19,7 @@ onMounted(getCurrentUser);
 
 <template>
   <div>
-    <h1>Top Page</h1>
+    <h1 class="p-3">Top Page</h1>
     <p>{{ user?.email }}</p>
   </div>
 </template>
