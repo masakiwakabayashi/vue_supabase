@@ -19,6 +19,11 @@ npm run test:unit
 ```sh
 npx supabase start
 ```
+
+```sh
+npx supabase db reset
+```
+
 ## Create Migration
 
 ```sh
