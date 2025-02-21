@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
 import { supabase } from '@/lib/supabaseClient'
 
 const router = createRouter({
@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: Home,
     },
     {
       path: '/about',
@@ -16,43 +16,43 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      component: () => import('../views/experiment/AboutView.vue'),
     },
     // ルーティングはここにどのコンポーネントを使うかを登録する
     {
       path: '/sample',
       name: 'sample',
-      component: () => import('../views/SampleView.vue'),
+      component: () => import('../views/experiment/SampleView.vue'),
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('../views/LoginView.vue'),
+      component: () => import('../views/Login.vue'),
     },
     {
       path: '/todo',
       name: 'todoList',
-      component: () => import('../views/TodoListView.vue'),
+      component: () => import('../views/experiment/TodoListView.vue'),
     },
     {
       path: '/todo/:id',
       name: 'todo',
-      component: () => import('../views/TodoView.vue'),
+      component: () => import('../views/experiment/TodoView.vue'),
     },
     {
       path: '/todo/create',
       name: 'todoCreate',
-      component: () => import('../views/TodoCreateView.vue'),
+      component: () => import('../views/experiment/TodoCreateView.vue'),
     },
     {
       path: '/todo/edit/:id',
       name: 'todoEdit',
-      component: () => import('../views/TodoEditView.vue'),
+      component: () => import('../views/experiment/TodoEditView.vue'),
     },
     {
       path: '/memos',
       name: 'memos',
-      component: () => import('../views/MemosView.vue'),
+      component: () => import('../views/Memo.vue'),
     },
   ],
 });

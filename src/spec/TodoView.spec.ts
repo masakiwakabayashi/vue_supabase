@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
 import { createRouter, createMemoryHistory } from 'vue-router';
-import TodoView from '@/views/TodoView.vue';
+import TodoView from '@/views/experiment/TodoView.vue';
 
 
 describe('Todoページのテスト', () => {
