@@ -50,9 +50,14 @@ const router = createRouter({
       component: () => import('../views/experiment/TodoEditView.vue'),
     },
     {
-      path: '/memos',
-      name: 'memos',
-      component: () => import('../views/Memo.vue'),
+      path: '/memo/create',
+      name: 'memoCreate',
+      component: () => import('../views/MemoCreate.vue'),
+    },
+    {
+      path: '/memo/edit',
+      name: 'memoEdit',
+      component: () => import('../views/MemoEdit.vue'),
     },
   ],
 });

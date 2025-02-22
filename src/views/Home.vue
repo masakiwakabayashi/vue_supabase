@@ -37,7 +37,17 @@ onMounted(()=>{
     <p class="text-gray-700 mt-4">{{ user?.email }}</p>
     
     <div class="mt-6">
-      <h3 class="text-lg font-semibold text-gray-800 border-b border-gray-300 pb-2">Memos</h3>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 border-b border-gray-300 pb-2">
+        <span class="mr-4">Memos</span>
+        <RouterLink
+          to="/memo/create"
+          class="hover:text-blue-200 transition-colors duration-200"
+        >
+          <i class="fa-solid fa-plus fa-lg"></i>
+        </RouterLink>
+        </h3>
+      </div>
       <div v-for="memo in memos" :key="memo.id" class="bg-white p-4 mt-4 shadow-sm rounded-md border border-gray-200">
         <div>
           <p class="text-lg font-medium text-gray-900">{{ memo.title }}</p>
