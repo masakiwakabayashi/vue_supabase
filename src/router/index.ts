@@ -30,6 +30,11 @@ const router = createRouter({
       component: () => import('../views/Login.vue'),
     },
     {
+      path: '/othello',
+      name: 'othello',
+      component: () => import('../views/othello/Othello.vue'),
+    },
+    {
       path: '/todo',
       name: 'todoList',
       component: () => import('../views/experiment/TodoListView.vue'),
