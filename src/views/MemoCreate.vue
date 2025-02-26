@@ -25,7 +25,7 @@ const createMemo = async () => {
 </script>
 
 <template>
-  <div class="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md">
+  <div class="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md mt-6">
     <h3 class="text-xl font-bold mb-4 text-center">メモ作成</h3>
     <form @submit.prevent="createMemo" class="space-y-4">
       <div>
