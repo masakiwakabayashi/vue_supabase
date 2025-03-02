@@ -1,5 +1,5 @@
 <script setup>
-import Board from '@/components/othello/ board.vue';
+import Board from '@/components/othello/board.vue';
 
 </script>
 
