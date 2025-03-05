@@ -12,6 +12,12 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="font-bold text-2xl">My App</div>
         <div class="space-x-4">
           <RouterLink
+            to="/habit_tracker"
+            class="hover:text-blue-200 transition-colors duration-200"
+          >
+            Habit Tracker
+          </RouterLink>
+          <RouterLink
             to="/othello"
             class="hover:text-blue-200 transition-colors duration-200"
           >

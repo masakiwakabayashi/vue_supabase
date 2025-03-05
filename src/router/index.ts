@@ -64,6 +64,11 @@ const router = createRouter({
       name: 'memoEdit',
       component: () => import('../views/MemoEdit.vue'),
     },
+    {
+      path: '/habit_tracker',
+      name: 'HabitTracker',
+      component: () => import('../views/HabitTracker.vue'),
+    },
   ],
 });
 
