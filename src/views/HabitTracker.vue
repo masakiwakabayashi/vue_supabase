@@ -13,6 +13,12 @@ const habits = ref([
   { id: 5, name: "日記を書く", completed: Array(30).fill(false) },
 ]);
 
+// habits
+// id, name, user_id
+
+// trackers
+// id,date,habit_id,completed
+
 // 達成状況のトグル
 const toggleCompletion = (dayIndex, habitIndex) => {
   habits.value[habitIndex].completed[dayIndex] = !habits.value[habitIndex].completed[dayIndex];
