@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { getTrackersWithHabits } from "@/repositories/trackersRepository";
 
 // 1ヶ月（30日間）のリストを生成
 const days = Array.from({ length: 30 }, (_, i) => i + 1);
@@ -13,12 +14,6 @@ const habits = ref([
   { id: 5, name: "日記を書く", completed: Array(30).fill(false) },
 ]);
 
-// habits
-// id, name, user_id
-
-// trackers
-// id,date,habit_id,completed
-
 // 達成状況のトグル
 const toggleCompletion = (dayIndex, habitIndex) => {
   habits.value[habitIndex].completed[dayIndex] = !habits.value[habitIndex].completed[dayIndex];
@@ -29,6 +24,13 @@ const completedCountPerDay = (dayIndex) => {
   return habits.value.filter(habit => habit.completed[dayIndex]).length;
 };
 
+const trackers = ref([]);
+
+onMounted(async () => {
+  trackers.value = await getTrackersWithHabits('123e4567-e89b-12d3-a456-426614174000');
+  console.log(trackers.value);
+});
+
 // 過去の日付に関しては、変更できないみたいな機能もつくりたい
 
 </script>
@@ -37,6 +39,8 @@ const completedCountPerDay = (dayIndex) => {
   <div class="min-h-screen bg-gray-100 flex items-center justify-center p-6">
     <div class="bg-white shadow-lg rounded-xl p-6 w-full max-w-5xl overflow-x-auto">
       <h1 class="text-2xl font-bold text-blue-600 mb-4 text-center">習慣トラッカー</h1>
+
+      <!-- <div>{{ trackers }}</div> -->
 
       <div class="overflow-x-auto">
         <table class="w-full border-collapse border border-gray-300">

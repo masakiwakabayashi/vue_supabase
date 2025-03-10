@@ -41,6 +41,9 @@ INSERT INTO "public"."habits" ("id", "name", "user_id", "created_at", "updated_a
 ('33333333-3333-3333-3333-333333333333', '瞑想', '123e4567-e89b-12d3-a456-426614174000', NOW(), NOW()),
 ('44444444-4444-4444-4444-444444444444', '日記を書く', '123e4567-e89b-12d3-a456-426614174000', NOW(), NOW());
 
+INSERT INTO "public"."habits" ("id", "name", "user_id", "created_at", "updated_at") VALUES
+('55555555-5555-5555-5555-555555555555', '早寝早起き', '123e4567-e89b-12d3-a456-426614174000', NOW(), NOW());
+
 -- trackers テーブルのテストデータ
 INSERT INTO "public"."trackers" ("date", "habit_id", "completed", "created_at", "updated_at") VALUES
 ('2025-03-01', '11111111-1111-1111-1111-111111111111', TRUE, NOW(), NOW()),
