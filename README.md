@@ -24,8 +24,32 @@ npx supabase start
 npx supabase db reset
 ```
 
-## Create Migration
+```sh
+npx supabase status
+```
+
+### Create Migration
 
 ```sh
 npx supabase db diff --use-migra -f {migration_name}
 ```
+
+
+### Edge Functions
+
+```sh
+npx supabase functions new {function_name}
+```
+
+```sh
+npx supabase functions serve
+```
+
+
+
+
+
+
+
+
+
