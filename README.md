@@ -14,6 +14,12 @@ npm run dev
 npm run test:unit
 ```
 
+## E2E Test
+
+```sh
+npx playwright test --ui
+```
+
 ## Supabase
 
 ```sh
