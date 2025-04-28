@@ -80,23 +80,35 @@ const router = createRouter({
       component: () => import('../views/HabitTracker.vue'),
       meta: { requiresAuth: true },
     },
+    {
+      path: '/memo/create',
+      name: 'memoCreate',
+      component: () => import('../views/MemoCreate.vue'),
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/streaming_test',
+      name: 'StreamingResponse',
+      component: () => import('../views/StreamingResponse.vue'),
+      // meta: { requiresAuth: true },
+    },
   ],
 });
 
-// ログイン判定
-router.beforeEach(async (to, from, next) => {
-  const { data: { session } } = await supabase.auth.getSession();
+// // ログイン判定
+// router.beforeEach(async (to, from, next) => {
+//   const { data: { session } } = await supabase.auth.getSession();
 
-  const isAuthenticated = !!session;
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+//   const isAuthenticated = !!session;
+//   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
-  // 🔐 認証が必要 → 未ログインならログインページへ
-  if (requiresAuth && !isAuthenticated) {
-    return next('/login');
-  }
+//   // 🔐 認証が必要 → 未ログインならログインページへ
+//   if (requiresAuth && !isAuthenticated) {
+//     return next('/login');
+//   }
 
-  // 通常通り遷移
-  next();
-});
+//   // 通常通り遷移
+//   next();
+// });
 
 export default router
