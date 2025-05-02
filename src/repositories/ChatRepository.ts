@@ -1,5 +1,5 @@
 export async function fetchChatStream(messages: any, onMessageCallback: any) {
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+  const apiKey = import.meta.env.VITE_OPEN_AI_API_KEY;
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
