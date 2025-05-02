@@ -8,7 +8,7 @@ export async function fetchChatStream(messages: any, onMessageCallback: any) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'gpt-4',
+      model: 'gpt-4.1',
       messages: messages,
       stream: true,   // ←重要！
     }),
