@@ -1,4 +1,12 @@
-export async function fetchChatStream(messages: any, onMessageCallback: any) {
+type ChatMessage = {
+  role: 'system' | 'user' | 'assistant';
+  content: string;
+};
+
+export async function fetchChatStream(
+  messages: ChatMessage[],
+  onMessageCallback: (text: string) => void
+) {
   const apiKey = import.meta.env.VITE_OPEN_AI_API_KEY;
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -9,8 +17,8 @@ export async function fetchChatStream(messages: any, onMessageCallback: any) {
     },
     body: JSON.stringify({
       model: 'gpt-4.1',
-      messages: messages,
-      stream: true,   // ←重要！
+      messages,
+      stream: true,
     }),
   });
 
@@ -33,10 +41,16 @@ export async function fetchChatStream(messages: any, onMessageCallback: any) {
           const data = line.replace(/^data: /, '');
           if (data === '[DONE]') return;
           try {
-            const parsed = JSON.parse(data);
+            const parsed = JSON.parse(data) as {
+              choices: {
+                delta?: {
+                  content?: string;
+                };
+              }[];
+            };
             const text = parsed.choices[0]?.delta?.content;
             if (text) {
-              onMessageCallback(text); // Vueに通知！
+              onMessageCallback(text);
             }
           } catch (e) {
             console.error('JSON parse error', e);
